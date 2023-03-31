@@ -1,50 +1,50 @@
 public fun testAccountBehaviors() {
-    val contaAlex = Conta(titular = "Alex", numero = 1000)
-    contaAlex.deposita(200.0)
+    val accountAlex = Account(titular = "Alex", numero = 1000)
+    accountAlex.deposita(200.0)
 
-    val contaFran = Conta(numero = 1001, titular = "Fran")
-    contaFran.deposita(300.0)
+    val accountFran = Account(numero = 1001, titular = "Fran")
+    accountFran.deposita(300.0)
 
-    println(contaFran.titular)
-    println(contaFran.numero)
-    println(contaFran.saldo)
+    println(accountFran.titular)
+    println(accountFran.numero)
+    println(accountFran.saldo)
 
-    println(contaAlex.titular)
-    println(contaAlex.numero)
-    println(contaAlex.saldo)
+    println(accountAlex.titular)
+    println(accountAlex.numero)
+    println(accountAlex.saldo)
 
     println("depositando na conta do Alex")
-    contaAlex.deposita(50.0)
-    println(contaAlex.saldo)
+    accountAlex.deposita(50.0)
+    println(accountAlex.saldo)
 
     println("depositando na conta da Fran")
-    contaFran.deposita(70.0)
-    println(contaFran.saldo)
+    accountFran.deposita(70.0)
+    println(accountFran.saldo)
 
     println("sacando na conta do Alex")
-    contaAlex.saca(250.0)
-    println(contaAlex.saldo)
+    accountAlex.saca(250.0)
+    println(accountAlex.saldo)
 
     println("sacando na conta da Fran")
-    contaFran.saca(100.0)
-    println(contaFran.saldo)
+    accountFran.saca(100.0)
+    println(accountFran.saldo)
 
     println("saque em excesso na conta do Alex")
-    contaAlex.saca(100.0)
-    println(contaAlex.saldo)
+    accountAlex.saca(100.0)
+    println(accountAlex.saldo)
 
     println("saque em excesso na conta da Fran")
-    contaFran.saca(500.0)
-    println(contaFran.saldo)
+    accountFran.saca(500.0)
+    println(accountFran.saldo)
 
     println("Transferência da conta da Fran para o Alex")
 
-    if (contaFran.transfere(destino = contaAlex, valor = 300.0)) {
+    if (accountFran.transfere(destino = accountAlex, valor = 300.0)) {
         println("Transferência sucedida")
     } else {
         println("Falha na transferência")
     }
 
-    println(contaAlex.saldo)
-    println(contaFran.saldo)
+    println(accountAlex.saldo)
+    println(accountFran.saldo)
 }

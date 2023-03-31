@@ -1,4 +1,4 @@
-class Conta(
+class Account(
     var titular: String,
     val numero: Int
 ) {
@@ -17,7 +17,7 @@ class Conta(
         }
     }
 
-    fun transfere(valor: Double, destino: Conta): Boolean {
+    fun transfere(valor: Double, destino: Account): Boolean {
         if (saldo >= valor) {
             saldo -= valor
             destino.deposita(valor)
