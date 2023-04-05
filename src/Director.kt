@@ -11,7 +11,7 @@ class Director(
 ){
     override val bonus: Double
         get() {
-            return salary * 0.3
+            return super.bonus + salary + plr
         }
 
     fun authenticate(password: Int): Boolean {
