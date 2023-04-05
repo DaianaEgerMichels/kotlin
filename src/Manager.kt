@@ -8,9 +8,10 @@ class Manager(
     cpf = cpf,
     salary = salary
 ){
-//    fun bonus(): Double {
-//        return salary * 0.2
-//    }
+    override val bonus: Double
+        get() {
+            return salary * 0.2
+        }
 
     fun authenticate(password: Int): Boolean {
         if (this.password == password){

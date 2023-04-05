@@ -11,7 +11,7 @@ fun main() {
     println("name ${employee1.name}")
     println("cpf ${employee1.cpf}")
     println("salary ${employee1.salary}")
-    println("bonus ${employee1.bonus()}")
+    println("bonus ${employee1.bonus}")
 
     val employee2 = Manager(
         name = "Carol Jenks",
@@ -23,7 +23,7 @@ fun main() {
     println("name ${employee2.name}")
     println("cpf ${employee2.cpf}")
     println("salary ${employee2.salary}")
-    println("bonus ${employee2.bonus()}")
+    println("bonus ${employee2.bonus}")
 
     if (employee2.authenticate(12345)){
         println("Employee authenticated")
@@ -42,7 +42,7 @@ fun main() {
     println("name ${employee3.name}")
     println("cpf ${employee3.cpf}")
     println("salary ${employee3.salary}")
-    println("bonus ${employee3.bonus()}")
+    println("bonus ${employee3.bonus}")
 
     if (employee3.authenticate(123456)){
         println("Employee authenticated")
