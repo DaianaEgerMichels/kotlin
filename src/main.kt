@@ -14,9 +14,9 @@ fun main() {
     println("bonus ${employee1.bonus()}")
 
     val employee2 = Manager(
-        name = "Cristal Lockshelf",
+        name = "Carol Jenks",
         cpf = "111.222.333-44",
-        salary = 2000.0,
+        salary = 4000.0,
         password = 12345
     )
 
@@ -26,6 +26,25 @@ fun main() {
     println("bonus ${employee2.bonus()}")
 
     if (employee2.authenticate(12345)){
+        println("Employee authenticated")
+    } else {
+        println("Error authenticating")
+    }
+
+    val employee3 = Director(
+        name = "Cecilia Benner",
+        cpf = "111.222.333-44",
+        salary = 8000.0,
+        password = 123456,
+        plr = 2000.00
+    )
+
+    println("name ${employee3.name}")
+    println("cpf ${employee3.cpf}")
+    println("salary ${employee3.salary}")
+    println("bonus ${employee3.bonus()}")
+
+    if (employee3.authenticate(123456)){
         println("Employee authenticated")
     } else {
         println("Error authenticating")
