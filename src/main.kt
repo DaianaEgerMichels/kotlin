@@ -49,4 +49,11 @@ fun main() {
     } else {
         println("Error authenticating")
     }
+
+    val calculator = BonusCalculator()
+    calculator.registry(employee1)
+    calculator.registry(employee2)
+    calculator.registry(employee3)
+
+    println(" Total bonus ${calculator.total}")
 }
