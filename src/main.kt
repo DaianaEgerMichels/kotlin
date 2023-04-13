@@ -1,6 +1,5 @@
 fun main() {
     println("Bem vindo ao Bytebank")
-//    testAccountBehaviors()
 
     val employee1 = Employee(
         name = "Cristal Lockshelf",
@@ -13,7 +12,7 @@ fun main() {
     println("salary ${employee1.salary}")
     println("bonus ${employee1.bonus}")
 
-    val employee2 = Manager(
+    val employee2: Manager = Manager(
         name = "Carol Jenks",
         cpf = "111.222.333-44",
         salary = 4000.0,
@@ -31,7 +30,7 @@ fun main() {
         println("Error authenticating")
     }
 
-    val employee3 = Director(
+    val employee3: Director = Director(
         name = "Cecilia Benner",
         cpf = "111.222.333-44",
         salary = 8000.0,
@@ -50,10 +49,22 @@ fun main() {
         println("Error authenticating")
     }
 
+    val employee4: Analyst = Analyst(
+        name = "Marta Güerth",
+        cpf = "111.222.333-44",
+        salary = 4000.0
+    )
+
+    println("name ${employee4.name}")
+    println("cpf ${employee4.cpf}")
+    println("salary ${employee4.salary}")
+    println("bonus ${employee4.bonus}")
+
     val calculator = BonusCalculator()
     calculator.registry(employee1)
     calculator.registry(employee2)
     calculator.registry(employee3)
+    calculator.registry(employee4)
 
     println(" Total bonus ${calculator.total}")
 }
