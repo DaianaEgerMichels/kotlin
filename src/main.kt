@@ -1,70 +1,35 @@
 fun main() {
     println("Bem vindo ao Bytebank")
 
-    val employee1 = Employee(
-        name = "Cristal Lockshelf",
-        cpf = "111.222.333-44",
-        salary = 2000.0
+    val checkingAccount = CheckingAccount(
+        holder = "Melly",
+        number = 1001
     )
 
-    println("name ${employee1.name}")
-    println("cpf ${employee1.cpf}")
-    println("salary ${employee1.salary}")
-    println("bonus ${employee1.bonus}")
-
-    val employee2: Manager = Manager(
-        name = "Carol Jenks",
-        cpf = "111.222.333-44",
-        salary = 4000.0,
-        password = 12345
+    val savingsAccount = SavingsAccount(
+        holder = "Oddy",
+        number = 1002
     )
 
-    println("name ${employee2.name}")
-    println("cpf ${employee2.cpf}")
-    println("salary ${employee2.salary}")
-    println("bonus ${employee2.bonus}")
+    checkingAccount.deposit(1000.0)
+    savingsAccount.deposit(1000.0)
 
-    if (employee2.authenticate(12345)){
-        println("Employee authenticated")
-    } else {
-        println("Error authenticating")
-    }
+    println("Checking Account: value before checkout -> ${checkingAccount.balance}")
+    println("Savings Account: value before checkout -> ${savingsAccount.balance}")
 
-    val employee3: Director = Director(
-        name = "Cecilia Benner",
-        cpf = "111.222.333-44",
-        salary = 8000.0,
-        password = 123456,
-        plr = 2000.00
-    )
+    checkingAccount.checkout(100.0)
+    savingsAccount.checkout(100.0)
 
-    println("name ${employee3.name}")
-    println("cpf ${employee3.cpf}")
-    println("salary ${employee3.salary}")
-    println("bonus ${employee3.bonus}")
+    println("Checking Account: value after checkout -> ${checkingAccount.balance}")
+    println("Savings Account: value after checkout -> ${savingsAccount.balance}")
 
-    if (employee3.authenticate(123456)){
-        println("Employee authenticated")
-    } else {
-        println("Error authenticating")
-    }
+    checkingAccount.transfer(100.0, savingsAccount)
 
-    val employee4: Analyst = Analyst(
-        name = "Marta Güerth",
-        cpf = "111.222.333-44",
-        salary = 4000.0
-    )
+    println("Checking Account: value after transfer -> ${checkingAccount.balance}")
+    println("Savings Account: value after recept transfer -> ${savingsAccount.balance}")
 
-    println("name ${employee4.name}")
-    println("cpf ${employee4.cpf}")
-    println("salary ${employee4.salary}")
-    println("bonus ${employee4.bonus}")
+    savingsAccount.transfer(100.0, checkingAccount)
 
-    val calculator = BonusCalculator()
-    calculator.registry(employee1)
-    calculator.registry(employee2)
-    calculator.registry(employee3)
-    calculator.registry(employee4)
-
-    println(" Total bonus ${calculator.total}")
+    println("Savings Account: value after transfer -> ${savingsAccount.balance}")
+    println("Checking Account: value after recept transfer -> ${checkingAccount.balance}")
 }

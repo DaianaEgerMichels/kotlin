@@ -1,26 +1,26 @@
-class Account(
-    var titular: String,
-    val numero: Int
+open class Account(
+    var holder: String,
+    val number: Int
 ) {
-    var saldo = 0.0
+    var balance = 0.0
         private set
 
-    fun deposita(valor: Double) {
-        if (valor > 0) {
-            this.saldo += valor
+    fun deposit(value: Double) {
+        if (value > 0) {
+            this.balance += value
         }
     }
 
-    fun saca(valor: Double) {
-        if (saldo >= valor) {
-            saldo -= valor
+    open fun checkout(value: Double) {
+        if (balance >= value) {
+            balance -= value
         }
     }
 
-    fun transfere(valor: Double, destino: Account): Boolean {
-        if (saldo >= valor) {
-            saldo -= valor
-            destino.deposita(valor)
+    fun transfer(value: Double, destiny: Account): Boolean {
+        if (balance >= value) {
+            balance -= value
+            destiny.deposit(value)
             return true
         }
         return false

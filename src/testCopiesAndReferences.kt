@@ -7,13 +7,13 @@ fun testCopiesAndReferences() {
     println("numeroY $numeroY")
 
     val accountJoao = Account("João", 1002)
-    accountJoao.titular = "João"
+    accountJoao.holder = "João"
     var accountMaria = Account("Maria", 1003)
-    accountMaria.titular = "Maria"
-    accountJoao.titular = "João"
+    accountMaria.holder = "Maria"
+    accountJoao.holder = "João"
 
-    println("titular conta joao: ${accountJoao.titular}")
-    println("titular conta maria: ${accountMaria.titular}")
+    println("titular conta joao: ${accountJoao.holder}")
+    println("titular conta maria: ${accountMaria.holder}")
 
     println(accountJoao)
     println(accountMaria)
