@@ -1,5 +1,5 @@
 fun testEmployee() {
-    val employee1 = Employee(
+    val employee1: Analyst = Analyst(
         name = "Cristal Lockshelf",
         cpf = "111.222.333-44",
         salary = 2000.0
