@@ -10,7 +10,7 @@ class Manager(
 ){
     override val bonus: Double
         get() {
-            return super.bonus  + salary
+            return salary
         }
 
     fun authenticate(password: Int): Boolean {

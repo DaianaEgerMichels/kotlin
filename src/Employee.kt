@@ -3,5 +3,5 @@ abstract class Employee(
     val cpf: String,
     val salary: Double
 ){
-    open val bonus: Double get() = salary * 0.1
+    abstract val bonus: Double
 }

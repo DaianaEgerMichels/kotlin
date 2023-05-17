@@ -10,7 +10,7 @@ class Analyst
     ) {
     override val bonus: Double
         get() {
-            return super.bonus + salary * 0.1
+            return salary * 0.1
         }
 
 }
