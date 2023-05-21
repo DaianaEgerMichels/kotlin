@@ -7,6 +7,8 @@ class CheckingAccount(
 ) {
     override fun checkout(value: Double) {
         val valueWithFee = value + 0.1
-        super.checkout(valueWithFee)
+        if (this.balance >= valueWithFee) {
+            this.balance -= valueWithFee
+        }
     }
 }

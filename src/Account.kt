@@ -1,9 +1,9 @@
-open class Account(
+abstract class Account(
     var holder: String,
     val number: Int
 ) {
     var balance = 0.0
-        private set
+        protected set
 
     fun deposit(value: Double) {
         if (value > 0) {
@@ -11,11 +11,7 @@ open class Account(
         }
     }
 
-    open fun checkout(value: Double) {
-        if (balance >= value) {
-            balance -= value
-        }
-    }
+    abstract fun checkout(value: Double)
 
     fun transfer(value: Double, destiny: Account): Boolean {
         if (balance >= value) {

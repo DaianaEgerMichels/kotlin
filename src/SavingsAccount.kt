@@ -5,4 +5,9 @@ class SavingsAccount(
     holder = holder,
     number = number
 ) {
+    override fun checkout(value: Double) {
+        if (this.balance >= value) {
+            this.balance -= value
+        }
+    }
 }
