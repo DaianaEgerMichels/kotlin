@@ -2,21 +2,16 @@ class Manager(
      name: String,
      cpf: String,
      salary: Double,
-     val password: Int
-) : Employee(
+     password: Int
+) : EmployeeAdmin(
     name = name,
     cpf = cpf,
-    salary = salary
+    salary = salary,
+    password = password
 ){
     override val bonus: Double
         get() {
             return salary
         }
 
-    fun authenticate(password: Int): Boolean {
-        if (this.password == password){
-            return true
-        }
-        return false
-    }
 }

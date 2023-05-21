@@ -1,8 +1,8 @@
 public fun testAccountBehaviors() {
-    val accountAlex = Account(holder = "Alex", number = 1000)
+    val accountAlex = CheckingAccount(holder = "Alex", number = 1000)
     accountAlex.deposit(200.0)
 
-    val accountFran = Account(number = 1001, holder = "Fran")
+    val accountFran = SavingsAccount(number = 1001, holder = "Fran")
     accountFran.deposit(300.0)
 
     println(accountFran.holder)
