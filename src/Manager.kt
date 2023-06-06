@@ -8,7 +8,7 @@ class Manager(
     cpf = cpf,
     salary = salary,
     password = password
-){
+), Authenticate{
     override val bonus: Double
         get() {
             return salary
