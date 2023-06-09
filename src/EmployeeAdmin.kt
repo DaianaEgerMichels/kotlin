@@ -2,14 +2,14 @@ abstract class EmployeeAdmin(
     name: String,
     cpf: String,
     salary: Double,
-    val password: Int
+    protected val password: Int
 ) : Employee(
     name = name,
     cpf = cpf,
     salary = salary
-){
+), Authenticate{
 
-    fun authenticate(password: Int): Boolean {
+    override fun authenticate(password: Int): Boolean {
         if(this.password === password) {
             return true
         }
