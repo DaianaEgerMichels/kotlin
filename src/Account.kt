@@ -13,12 +13,4 @@ abstract class Account(
 
     abstract fun checkout(value: Double)
 
-    fun transfer(value: Double, destiny: Account): Boolean {
-        if (balance >= value) {
-            balance -= value
-            destiny.deposit(value)
-            return true
-        }
-        return false
-    }
 }

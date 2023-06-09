@@ -1,7 +1,7 @@
 class CheckingAccount(
     holder: String,
     number: Int
-) : Account(
+) : TransferableAccount(
     holder = holder,
     number = number
 ) {

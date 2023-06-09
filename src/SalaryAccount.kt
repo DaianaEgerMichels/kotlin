@@ -1,7 +1,7 @@
-class SavingsAccount(
+class SalaryAccount(
     holder: String,
     number: Int
-) : TransferableAccount(
+) : Account(
     holder = holder,
     number = number
 ) {
